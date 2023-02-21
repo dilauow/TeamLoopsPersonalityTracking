@@ -4,11 +4,12 @@ import string
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.preprocessing.text import Tokenizer
+#
+# from tensorflow.keras.preprocessing.sequence import pad_sequences
+# from tensorflow.keras.preprocessing.text import Tokenizer
 # import numpy as np
 # from trainingData import TrainingData
+from TestCodeChunks.fileHandling import TrainingData
 
 
 class TextPreprocessor:
@@ -28,7 +29,10 @@ class TextPreprocessor:
 
         # Lemmatize words
         words = [self.lemmatizer.lemmatize(word) for word in words]
-        return words
+        completeSentences = " ".join(words)
+        return completeSentences
+
+    # def sentencePadding(self,array):
 
 
     def feedPreprocessorAnArray(self,array):
@@ -39,11 +43,12 @@ class TextPreprocessor:
         return preprocessedArray
 
 
-texts = ["The quick brown fox jumps over the lazy dog.",
-         "The cat in the hat.",
-         "The sun is shining.",
-         "It's raining cats and dogs."]
-
-Tr = TextPreprocessor()
-arr =Tr.feedPreprocessorAnArray(texts)
-print(arr)
+#
+# data = TrainingData()
+# data.importToModel()
+# texts = data.sentences
+# print(texts[0])
+#
+# Tr = TextPreprocessor()
+# arr =Tr.feedPreprocessorAnArray(texts)
+# print(arr[0])
