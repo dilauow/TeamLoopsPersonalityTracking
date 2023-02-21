@@ -17,7 +17,7 @@ textArray = Tr.feedPreprocessorAnArray(texts)
 print(textArray)
 
 # Initialize a tokenizer with a maximum vocabulary size of 1000
-tokenizer = Tokenizer(num_words=1000)
+tokenizer = Tokenizer(num_words=10000)
 
 # Fit the tokenizer on the input strings
 tokenizer.fit_on_texts(texts)
