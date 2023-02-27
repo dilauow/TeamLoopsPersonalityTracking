@@ -12,7 +12,7 @@ class TrainingData:
     def exportToCSV(self):
 
         # Open the .txt file for reading
-        with open('D:\Level 5 - 2nd Sem\LoopsImplementation\datasets\postive\AgPos.txt', 'r') as file:
+        with open('D:\Level 5 - 2nd Sem\LoopsImplementation\datasets\postive\oPos.txt', 'r') as file:
             lines = file.readlines()
 
         with open('oceanTraits.csv', 'a', newline='') as file:
@@ -24,7 +24,7 @@ class TrainingData:
 
             # Write the contents of the list of lines to the .csv file, with a value of 0 in the second column
             for line in lines:
-                writer.writerow([line.strip(), 0,0,0,1,0])
+                writer.writerow([line.strip(), 1,0,0,0,0])
 
     def importToModel(self):
 
@@ -40,7 +40,7 @@ class TrainingData:
                 self.agreebleness.append(int(row[5]))
 
 
-# data = TrainingData()
-# # data.exportToCSV()
+data = TrainingData()
+data.exportToCSV()
 # data.importToModel()
 # print(len(data.sentences))

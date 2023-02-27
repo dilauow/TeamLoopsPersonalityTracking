@@ -45,5 +45,6 @@ class TrainingData:
 
 
 # data = TrainingData()
-# data.importToModel()
-# print(len(data.sentences))
+# data.exportToCSV()
+# # data.importToModel()
+# # print(len(data.sentences))
