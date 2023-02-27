@@ -44,7 +44,7 @@ class TextPreprocessor:
 
 
 #
-# data = TrainingData()
+data = TrainingData()
 # data.importToModel()
 # texts = data.sentences
 # print(texts[0])

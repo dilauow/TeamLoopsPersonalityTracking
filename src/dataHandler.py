@@ -7,6 +7,7 @@ class TrainingData:
     extraversion = []
     agreebleness =[]
     nurotisicm = []
+    allTraitLabel = []
 
 
     def exportToCSV(self):
@@ -28,7 +29,7 @@ class TrainingData:
 
     def importToModel(self):
 
-        with open("oceanTraits.csv") as file:
+        with open('D:\Level 5 - 2nd Sem\LoopsImplementation\datasets\oceanTraitDataset.csv') as file:
             reader = csv.reader(file)
             next(reader)  # Skip the header row
             for row in reader:
@@ -37,10 +38,12 @@ class TrainingData:
                 self.consciensiosness.append(int(row[2]))
                 self.extraversion.append(int(row[3]))
                 self.agreebleness.append(int(row[4]))
-                self.agreebleness.append(int(row[5]))
+                self.nurotisicm.append(int(row[5]))
+
+                tempArr = [int(row[1]),int(row[2]),int(row[3]),int(row[4]),int(row[5])]
+                self.allTraitLabel.append(tempArr)
 
 
-data = TrainingData()
-data.exportToCSV()
+# data = TrainingData()
 # data.importToModel()
 # print(len(data.sentences))
