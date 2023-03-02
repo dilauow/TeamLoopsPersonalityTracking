@@ -39,6 +39,45 @@ class TraitCalculator:
 
         self.MlModel.test_classifiers(features,label,clf)
 
+    def getText(self,para):
+        return para.split('.')
+
+
+    def calculateTraitScores(self, traitdoubleArr):
+
+        traitScores = [0,0,0,0,0]
+        summation = 0
+
+        traitArr = traitdoubleArr[0]
+
+        # calculate the total for each trait
+
+        for i in range(len(traitArr)):
+            for j in range(len(traitArr[i])) :
+                if traitArr[i][j] <0:
+                    traitScores[i] = traitScores[i]+ (traitArr[i][j])
+                    summation += (1 * traitArr[i][j])
+                else:
+                    traitScores[i] = traitScores[i] + (traitArr[i][j])
+                    summation += traitArr[i][j]
+        print(summation)
+        return [traitScores[0]/summation,traitScores[1]/summation,traitScores[2]/summation,traitScores[3]/summation,traitScores[4]/summation,]
+
+#       calculate the scores
+#         return
+
+
+
+
+# testArr = [[-1, -1,  1,  0, -1],
+# [-1 , 1,  0,  0,  1],
+# [-1, -1,  0,  1 ,-1],
+# [-1 ,-1, 0 , 0, -1],
+# [0 ,0 ,1 ,1 ,0]]
+#
+#
+# tr = TraitCalculator()
+# print(tr.calculateTraitScores(testArr))
 
 
 

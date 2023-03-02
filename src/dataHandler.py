@@ -43,6 +43,13 @@ class TrainingData:
                 tempArr = [int(row[1]),int(row[2]),int(row[3]),int(row[4]),int(row[5])]
                 self.allTraitLabel.append(tempArr)
 
+    def getText(self, parahgraph):
+        splitedText = parahgraph.split('.')
+        return splitedText
+
+
+
+
 
 # data = TrainingData()
 # data.exportToCSV()
