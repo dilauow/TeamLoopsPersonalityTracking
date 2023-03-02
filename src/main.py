@@ -1,13 +1,8 @@
 from src.TraitCalculator import TraitCalculator
 
-
-
-
 class ModelMain:
     def __init__(self,sentences):
        self.text = sentences
-
-
 
     def runnerClass(self):
         X_test = [0, 0, 0, 0, 0]
@@ -39,10 +34,6 @@ class ModelMain:
             paddedTest = tc.preprocessor(X_test[i])
             tc.testClassifier(paddedTest, y_test[i], clf)
 
-        userBreak = "True"
-
-        placeCounter = 0
-
         predicts = []
         sentence = self.text
         paraArr = tc.getText(sentence)
@@ -64,8 +55,11 @@ class ModelMain:
         print(finalPredicts[0] / total, finalPredicts[1] / total, finalPredicts[2] / total,
               finalPredicts[3] / total,
               finalPredicts[4] / total, )
+        return [finalPredicts[0] / total, finalPredicts[1] / total, finalPredicts[2] / total,
+              finalPredicts[3] / total,
+              finalPredicts[4] / total]
 
 
-M = ModelMain(r"I would describe myself as an introverted person who values structure, organization, and attention to detail. While I may not be the most outgoing or social person, I am dedicated to producing high-quality work and ensuring that everything is done to the best of my abilities. I have a strong work ethic and am committed to meeting deadlines and exceeding expectations. I tend to be methodical in my approach and enjoy breaking down complex tasks into smaller, more manageable parts. I am also comfortable working independently and enjoy having the time and space to focus on my work. However, I recognize the importance of collaboration and communication, and I am always willing to work with others to achieve a common goal. Overall, I believe that my introverted nature and conscientiousness make me a reliable and valuable asset to any team.")
-
-M.runnerClass()
+# M = ModelMain(r"I would describe myself as an introverted person who values structure, organization, and attention to detail. While I may not be the most outgoing or social person, I am dedicated to producing high-quality work and ensuring that everything is done to the best of my abilities. I have a strong work ethic and am committed to meeting deadlines and exceeding expectations. I tend to be methodical in my approach and enjoy breaking down complex tasks into smaller, more manageable parts. I am also comfortable working independently and enjoy having the time and space to focus on my work. However, I recognize the importance of collaboration and communication, and I am always willing to work with others to achieve a common goal. Overall, I believe that my introverted nature and conscientiousness make me a reliable and valuable asset to any team.")
+#
+# M.runnerClass()

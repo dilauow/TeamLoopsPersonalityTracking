@@ -15,7 +15,6 @@ class TraitModel:
         return X_train,X_test,y_train,y_test
 
 
-
     def randomForest(self,vectorizedSentences,labels):
         clf = RandomForestClassifier(n_estimators=100)
         clf.fit(vectorizedSentences, labels)
